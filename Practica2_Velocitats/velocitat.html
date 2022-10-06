@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="ca">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<title>Càlcul de velocitats mitjanes</title>
+	</head>
+	<body>    
+		<p><b><u>APLICACIÓ PEL CÀLCUL DE VELOCITATS MITJANES</u></b></p>
+		<b>a) Introudeix les dades de velocitat en quilòmetres per hora (Km/h):<br></b>
+		<table>
+			<tbody>
+				<tr>
+					<td>Mostra de velocitat 1:</td>
+					<td><input type="text" name="vel[]" size="5" maxlength="6" value=0></td>
+					<td>Mostra de velocitat 2:</td>
+					<td><input type="text" name="vel[]" size="5" maxlength="6" value=0></td>
+				</tr>
+				 <tr>
+					<td>Mostra de velocitat 3:</td>
+					<td><input type="text" name="vel[]" size="5" maxlength="6" value=0></td>
+					<td>Mostra de velocitat 4:</td>
+					<td><input type="text" name="vel[]" size="5" maxlength="6" value=0></td>
+				 </tr>
+				 <tr>
+					<td>Mostra de velocitat 5:</td>
+					<td><input type="text" name="vel[]" size="5" maxlength="6" value=0></td>
+					<td>Mostra de velocitat 6:</td>
+					<td><input type="text" name="vel[]" size="5" maxlength="6" value=0></td>
+				 </tr>
+				 <tr>
+					<td>Mostra de velocitat 7:</td>
+					<td><input type="text" name="vel[]" size="5" maxlength="6" value=0></td>
+					<td>Mostra de velocitat 8:</td>
+					<td><input type="text" name="vel[]" size="5" maxlength="6" value=0></td>
+				 </tr>
+			</tbody>
+		</table>	
+		<br>
+        <b>b) Escull les unitats de velocitat del resultat:</b><br>
+        <input name="uv[]" value="kmh" type="checkbox" checked>Km per hora (Km/h)<br>
+        <input name="uv[]" value="mph" type="checkbox">Milles per hora (mph)<br>
+        <input name="uv[]" value="mps" type="checkbox">Metres per segon (m/s)<br>
+        <br>        
+        <button onclick='fCalculaMitjanes()'>Calcula mitjanes</button>
+		<button onclick='fNetejaDades()'>Neteja dades</button>
+		<p><b>RESULTATS:</b></p>
+		<p id="resultats"></p>
+		<button onclick='fNetejaResultats()'>Neteja resultats</button>
+		<script>
+			function fCalculaMitjanes() {	
+                let velocitat;
+                let mitjana=0;
+                let array = document.getElementsByName('vel[]');
+                let checkbox;
+                let array2 = document.getElementsByName('uv[]');
+                let resultat="";
+                let mps=0;
+                let mph=0;
+                for (let i = 0; i < array.length; i++) {
+                    velocitat=array[i];
+                    mitjana=mitjana+parseFloat(velocitat.value);
+                }
+                mitjana=mitjana/array.length;
+                for (let i = 0; i < array2.length; i++) {
+                    if (array2[i].checked) {
+                        switch (array2[i].value) {
+                            case "kmh":
+                                resultat+="kmh: "+mitjana.toFixed(2)+"Km/H<br>"
+                                break;
+                            case "mph":
+                                mph=mitjana*0.621;
+                                resultat+="mph: "+mph.toFixed(2)+"mph<br>"
+                                break;
+                            case "mps":
+                                mps=mitjana*0.278;
+                                resultat+="mps: "+mps.toFixed(2)+"m/s<br>"
+                            break;
+                            default:
+                                resultat+="nova "
+                                break;
+                        }
+                    }
+                }
+                //1 Km/h = 0,621 mph
+                //1 Km/h = 0,278 m/s
+                document.getElementById('resultats').innerHTML=resultat;
+			}
+			
+			function fNetejaDades() {
+                let velocitat;
+                let array = document.getElementsByName('vel[]');
+                let array2 = document.getElementsByName('uv[]');
+                for (let i = 0; i < array.length; i++) {
+                    velocitat=array[i];
+                    velocitat.value=0;
+                }
+                for (let i = 0; i < array2.length; i++) {
+                    switch (array2[i].value) {
+                            case "kmh":
+                                array2[i].checked=true;
+                                break;
+                            case "mph":
+                                array2[i].checked=false;
+                                break;
+                            case "mps":
+                                array2[i].checked=false;
+                            break;
+                            default:
+                                resultat+="nova "
+                                break;
+                        }
+                }
+			}
+						
+			function fNetejaResultats() {	
+                document.getElementById("resultats").innerHTML=('');		
+			}
+		</script>   
+	</body>
+</html>

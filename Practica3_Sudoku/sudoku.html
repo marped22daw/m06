@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="sudoku.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="inici">
+        <br>
+        <h1>sudoku</h1>
+        <p class="p">L'objectiu és omplir una graella de 9×9 files i columnes subdividida en 9 subgraelles de 3×3 anomenades regions. Donats uns quants números inicials, l'objectiu és col·locar un número de l'1 al 9 en cada cel·la de tal manera que mai coincideixin dos números iguals en cada línia horitzontal, vertical o en cada regió.</p>
+        <br><br>
+        <label>Selecciona un nivell</label>
+        <form name="nivell" action="#">
+            <select name="nivell" id="lvl">
+              <!-- <option value="selecciona">Selecciona un nivell</option> -->
+              <option value="facil">Facil</option>
+              <option value="medio">Intermig</option>
+              <option value="dificil">Dificil</option>
+            </select>
+        </form>
+        <input type="submit" value="Inicia" id="inicia" class="boto"/>
+        <img src="https://www.new-sudoku.com/images/example_1.gif">
+        <br><br>
+    </div>
+    <div id="divsudoku" class="hidden">
+        <p id="crono" class="crono"></p>
+        <div class="sudoku">
+            <div id="taula"></div>
+        </div>
+        <button id="comprova" class="boto2">Comprova</button>
+        <button id="resol" class="boto2">Resol</button>
+        <p id="resultat" class="p"></p>
+    </div>
+    <script src="sudoku.js"></script>
+</body>
+</html>

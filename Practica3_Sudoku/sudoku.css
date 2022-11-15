@@ -1,0 +1,156 @@
+html,
+body{
+    margin: 0px;
+}
+h1{
+    margin-top: 0px;
+    margin-bottom: 60px;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    text-decoration: underline;
+}
+.inici {
+    background:gray;
+    position:static;
+    height: 620px;
+    top:0px;
+    right:0px;
+    bottom:0px;
+    left:0px;
+} 
+#divsudoku{
+    height: 700px;
+}
+.p{
+    margin-left: 250px;
+    margin-right: 250px;
+    text-align: center;
+    font-size: 120%;
+}
+.crono{
+    margin-top: 50px;
+    margin-left: 250px;
+    margin-right: 250px;
+    text-align: center;
+    font-size: 120%;
+}
+select {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-family: Arial, sans-serif;
+    background: whitesmoke;
+    color: black;
+    border: 1px solid black;
+    padding: 4px;
+    border-radius: 9px;
+}
+.boto {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+  }
+img{
+    display: block;
+    max-width:230px;
+    max-height:230px;
+    width: auto;
+    height: auto;
+    margin-top: 35px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.hidden{
+    display: none;
+}
+.sudoku{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+#taula {
+    width: 400px;
+    height: 400px;
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: flex-start;
+}
+input[type=text]{
+    color: transparent;
+    text-shadow: 0 0 0 black;
+    font-family: Arial, sans-serif;
+    border: 1px solid transparent;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    margin: 0px;
+    vertical-align: middle;
+    font-size: 25pt;
+    background-color: transparent;
+    outline: none;
+}
+.numsud{
+    border: 1px solid black;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    margin: 0px;
+    vertical-align: middle;
+    font-size: 25pt;
+    font-family: Arial, sans-serif;
+}
+.numstatic {
+    font-family: Arial, sans-serif;
+    background-color: lightgray !important;
+}
+.topbar{
+    border-top: 3px solid black;
+}
+.bottombar{
+    border-bottom: 3px solid black;
+}
+.leftbar{
+    border-left: 3px solid black;
+}
+.rightbar{
+    border-right: 3px solid black;
+}
+.boto2{
+    display: flex;
+    width: 100px;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+.error{
+    background-color: red;
+}
+.correcte{
+    background-color: green;
+}
+.select{
+    background-color: rgb(245, 242, 49) !important;
+}
+.quadre{
+    background-color: rgba(241, 43, 43, 0.726);
+}
+.fila{
+    background-color: rgba(151, 241, 48, 0.801)
+}
+.columna{
+    background-color: rgb(65, 108, 250);
+}

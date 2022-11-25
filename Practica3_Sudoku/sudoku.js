@@ -48,6 +48,7 @@ window.onload= function(){
             seg=0;
             min=0;
         }
+        document.getElementById('resultat').innerHTML=(``);
         clearInterval(interval);
         crono();
         interval = setInterval(crono,1000);
